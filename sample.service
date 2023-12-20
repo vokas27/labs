@@ -1,0 +1,14 @@
+[Unit]
+Description= My First web-server
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+ExecStart=java -jar /opt/sample/service.jar
+User=Vadim
+Restart=always
+RestartSec=10
+Environment=PORT=8888
+
+[Install]
+WantedBy=multi-user.target
